@@ -11,6 +11,10 @@ app.get('/search', (req, res) => {
  res.render('search');
 });
 
+app.get('/results', (req, res) => {
+ res.render('movies');
+});
+
 app.listen(3000, () => {
  console.log('Connected!!!');
 });
