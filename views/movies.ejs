@@ -15,27 +15,33 @@
 </head>
 
 <body>
-	<h1 id="searchHeading">Search Result <span style="color: gray;">></span>AVENGERS</h1>
+	<h1 id="searchHeading">Search Result <span style="color: gray;">></span><%= searchQuery.toUpperCase() %></h1>
+
+	<% data["results"].forEach((movie) => { %>
+
 	<div class="card mb-5 w-75">
 		<div class="row no-gutters">
 			<div class="col-md-4">
-				<img src="" class="card-img img-fluid">
+				<img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2<%= movie['poster_path'] %>"
+					class="card-img img-fluid">
 			</div>
 
 			<div class="col-md-8">
 				<div class="card-body">
-					<h2 class="card-title">Avengers</h2>
+					<h2 class="card-title"><%= movie["original_title"] %></h2>
 					<hr>
-					<p class="card-text">Summary of movie goes here.</p>
+					<p class=" card-text"><%= movie["overview"] %></p>
 					<hr>
 					<br>
-					<p class="card-text"><b>Date published:</b> 2019 </p>
-					<p class="card-text"><b>Total votes:</b> 20 </p>
-					<p class="card-text"><b>avarage Rating:</b> 5.5 </p>
+					<p class="card-text"><b>Date published:</b> <%= movie["release_date"] %> </p>
+					<p class="card-text"><b>Total votes:</b> <%= movie["vote_count"] %> </p>
+					<p class="card-text"><b>avarage Rating:</b> <%= movie["vote_average"] %> </p>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<% }) %>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
