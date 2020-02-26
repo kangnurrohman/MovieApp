@@ -1,2 +1,2 @@
 # MovieApp
-Simple movie application
+Simple movie application with express js & node js using API
